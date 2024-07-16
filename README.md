@@ -1,6 +1,6 @@
 # Anveshak_Nav Documentation
 ## newer_go_to_goal_flag.py
-!(https://github.com/Prajwal-Vijay/Anveshak_Nav/blob/main/Navigation_newer_go_to_goal_flag.png)
+!(Navigation_newer_go_to_goal_flag.png)
 ### Class GoToGoal - 
 
 **All the functions that belong to this class by default have assumed contain an input variable called self**
