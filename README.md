@@ -18,13 +18,13 @@ The scans are from -180 deg. to +180 deg. so, right_45 means 45 deg. to the righ
 ### moving_average_filter() - 
 Used to calculate a moving average of the datapoints it will help in reducing the noise while preserving the essential filters. This also adds stability of measurements, basically it takes a window around each point and calculates the average.
 
-### depth_callback() - 
+### depth_callback(msg) - 
 Used to display the image as seen by intel depth camera, although its subscriber has been commented out.
 
-### angle_callback() - 
+### angle_callback(msg) - 
 Takes angle values from IMU, returns the angle turned by the rover, from the initial angle(reference), we are considering the yaw angles only.
 
-### odom_callback() - 
+### odom_callback(msg) - 
 Takes the odometer values and finds the current position wrt an origin (reference)
 
 ### get_angles(desired_angle, rotation_dir) -
