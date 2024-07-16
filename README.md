@@ -155,13 +155,12 @@ Used to check if there are objects at a distance of less than 1.5 m in front of 
 ### move_straight(vel, count=0) - 
 Takes in the velocity of the wheel and starts moving accordingly, if there is an object in the front, then no movement, else, it moves on.
 
-### move_to_goal() - 
-There is a variable called self.count, which essentially describes, number of iterations of forward movement. Depending on the value of this variable, we have multiple choices =>
+### move_to_goal() - there is a variable called self.count, which essentially describes, number of iterations of forward movement. Depending on the value of this variable, we have multiple choices =>
 ```
           if self.count < 20:
             vel_msg = self.move_straight(1)
 ```
-self.count < 20 and there is an object in front then it sets various values to its default.
+```self.count < 20``` and there is an object in front then it sets various values to its default.
 ```
             elif self.count >=20 and self.object_in_front == True: 
             self.count = 0
@@ -174,7 +173,7 @@ self.count < 20 and there is an object in front then it sets various values to i
             vel_msg.vel = 0
             vel_msg.omega  = 0
 ```
-When self.count >= 20 and an object is detected in front of the rover (self.object_in_front == True), several flags are reset, including self.count, which is set back to 0. This indicates that the rover needs to stop and handle the obstacle before continuing its journey.
+When ```self.count``` >= 20 and an object is detected in front of the rover (```self.object_in_front``` == True), several flags are reset, including ```self.count```, which is set back to 0. This indicates that the rover needs to stop and handle the obstacle before continuing its journey.
 
 ```
              elif self.first_stop == False and self.third_stop == False:
@@ -200,9 +199,9 @@ When self.count >= 20 and an object is detected in front of the rover (self.obje
                     vel_msg.omega = 0
                     self.turn_over = True
 ```
-If an Obstacle is detected then it analyzes the lidar data (self.tensor[self.right_45:self.left_90]).
-If there are more than 10 points indicating obstacles within 2 meters, the rover continues turning (vel_msg.omega = self.turn_speed).The rover keeps track of the turn timing.
-If turning is no longer needed, it stops turning (vel_msg.omega = 0) and sets self.turn_over =True.
+If an Obstacle is detected then it analyzes the lidar data (```self.tensor[self.right_45:self.left_90]```).
+If there are more than 10 points indicating obstacles within 2 meters, the rover continues turning (```vel_msg.omega``` = ```self.turn_speed```).The rover keeps track of the turn timing.
+If turning is no longer needed, it stops turning (```vel_msg.omega``` = 0) and sets ```self.turn_over``` =True.
 
 
 ```
@@ -231,7 +230,7 @@ If turning is no longer needed, it stops turning (vel_msg.omega = 0) and sets se
                     vel_msg.omega = 0
                     self.turn_timing_count_start = False
 ```
-Now further the rover checks lidar data for obstacles within 2.5 meters (self.tensor[self.right_90:self.middle_0]).If obstacles are detected, it moves forward while avoiding them (vel_msg.vel = self.move_speed).If no obstacles are detected, it sets self.first_stop = True.
+Now further the rover checks lidar data for obstacles within 2.5 meters (```self.tensor[self.right_90:self.middle_0]```).If obstacles are detected, it moves forward while avoiding them (```vel_msg.vel``` = ```self.move_speed```).If no obstacles are detected, it sets ```self.first_stop``` = True.
 
          
 ```
@@ -283,7 +282,7 @@ Now further the rover checks lidar data for obstacles within 2.5 meters (self.te
                 print(f"Time of turning = {self.time_turn}")
                 print(f"Y Displacement = {self.displacement_y}")
 ```
-The rover checks the lidar data to decide the next move.It adjusts the distance to check based on self.y_disp_too_less.If obstacles are detected, it continues moving and adjusting (vel_msg.vel = self.move_speed, vel_msg.omega = self.turn_speed).
+The rover checks the lidar data to decide the next move.It adjusts the distance to check based on ```self.y_disp_too_less```.If obstacles are detected, it continues moving and adjusting (```vel_msg.vel``` = ```self.move_speed```, ```vel_msg.omega``` = ```self.turn_speed```).
 If no obstacles are detected, it follows the wall while updating displacement and turn timing.
 
 
@@ -299,11 +298,7 @@ If no obstacles are detected, it follows the wall while updating displacement an
                 vel_msg.vel = 0
                 vel_msg.omega = 0
 ```
-If  self.third_stop == True and further if self.turn_over == False then the rover aligns itself to zero degrees using self.get_angles(0,1) or self.get_angles(0,-1).If the rover is aligned then the rover stops completely (vel_msg.vel = 0, vel_msg.omega = 0).
-
-
-.
-
+If  ```self.third_stop``` == True and further if ```self.turn_over``` == False then the rover aligns itself to zero degrees using ```self.get_angles(0,1)``` or ```self.get_angles(0,-1)```.If the rover is aligned then the rover stops completely (```vel_msg.vel```= 0, ```vel_msg.omega``` = 0).
 
 
  
