@@ -3,8 +3,11 @@
 
 ![](Navigation_newer_go_to_goal_flag.png)
 
-#Variable Intuition and Naming Conventions
-##Class Variables
+
+# Variable Intuition and Naming Conventions
+
+## Class Variables
+
 ```self.tensor```: Holds lidar distance data.
 ```self.x```,``` self.y```, ```self.theta```: Current position and orientation of the robot.
 ```self.goal_x```, ```self.goal_y```: Goal coordinates.
