@@ -9,12 +9,19 @@
 ## Class Variables
 
 ```self.tensor```: Holds lidar distance data.
+
 ```self.x```,``` self.y```, ```self.theta```: Current position and orientation of the robot.
+
 ```self.goal_x```, ```self.goal_y```: Goal coordinates.
+
 ```self.vel_msg```: An instance of Twist for velocity commands.
+
 ```self.count```: Counter for iterations.
+
 ```self.object_in_front```: Boolean flag indicating if an obstacle is detected.
+
 ```self.turn_over```: Boolean flag indicating if the turn maneuver is completed.
+
 ```self.first_stop```, ```self.second_stop```, ```self.third_stop```: Flags to indicate the progress through the three main checks.
 
 
@@ -22,13 +29,15 @@ Subscriber - Publisher Relationship
 Subscribers:
  
 ```/scan```: Subscribes to ```LaserScan``` messages to get obstacle distances.
+
 ```/odom```: Subscribes to ```Odometry``` messages to get current position and orientation.
+
 ```/goal```: Subscribes to ```Point``` messages to get the goal coordinates.
 Publishers:
  
 ```/cmd_vel```: Publishes ```Twist``` messages to control the robot's linear and angular velocities.
 
-
+# Functions and Flow control
 ### Class GoToGoal - 
 
 **All the functions that belong to this class by default have assumed contain an input variable called self**
