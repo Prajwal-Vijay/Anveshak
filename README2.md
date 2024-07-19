@@ -47,7 +47,9 @@ Here, `theta1`, `theta2` and `theta3` have been defined which are with respect y
 `theta1` - It is the angle of the goal coordinate, with the base, as measured from y-axis
 `theta2` - It is the angle of the first link (between base and shoulder), with the y-axis
 `theta3` - It is the between the second link and the first link extended.
-!()[WhatsApp Image 2024-07-19 at 14.36.13.jpeg]
+
+![](arm_angles.png)
+
 We later convert these angular values to degrees and store them in variables called, 
 `base`, `shoulder`, `elbow`
 
