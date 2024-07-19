@@ -7,7 +7,7 @@ Defines the initial values of various variables.
 
 ### joyCallback(msg) - 
 This is a callback from the 'joy_arm' topic. The msgs are of the type Joy, which is used to get data from the joystick.
-- Joy.axes[0] => refers to left stick horizontal
+- `joy.axes[0]` => refers to left stick horizontal
 - Joy.axes[1] => refers to left stick vertical
 - Joy.axes[2] => refers to right stick horizontal
 - Joy.axes[3] => refers to right stick vertical
