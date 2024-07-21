@@ -1,5 +1,5 @@
 # Anveshak Documentation
-!()[Navigation_newer_go_to_goal_flag (1).png]
+![](flowchart_doc_ik.png)
 
 # Variable Intuition and Naming Convention - 
 ## Class variables
