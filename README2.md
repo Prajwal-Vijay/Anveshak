@@ -57,4 +57,7 @@ We later convert these angular values to degrees and store them in variables cal
 
 Now the angles values we create a `Int32MultiArray()`, which stores the angular velocity values, basically, the rover keeps publishing until the base, shoulder and elbow values are all under 3 degree treshold.
 
+### enc_callback() -
+
+Used to get the encoder data, which refers to readings of the base, shoulder and elbow.
 
