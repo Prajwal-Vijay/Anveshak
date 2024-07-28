@@ -2,6 +2,10 @@
 ## Differential_controller (by Pranav)
 ![](flowchart_doc_ik.png)
 
+# Purpose Of The Code
+This code aims to allow the arm to reach the goal by using joystick movement. We are able to change the goal in real time(slight delay due to time taken for motion to occur and calculations). This allows the arm to move along one particular axis and thus reach the goal in an easier manner than if one was to control each of the base, shoulder and elbow individually.
+
+
 # Variable Intuition and Naming Convention - 
 ## Class variables
 `self.goal` - It is a list that holds the 3 dimensional position of the goal.
